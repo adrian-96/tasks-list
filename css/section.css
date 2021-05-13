@@ -1,0 +1,41 @@
+.section {
+    background-color: #fff;
+    margin: 8px 0;
+}
+
+.section__h2 {
+    margin: 0;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.list {
+    padding: 20px;
+    list-style-type: none;
+}
+
+.list__item {
+    padding: 14px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+}
+
+.list__task {
+    flex-basis: 100%;
+    flex-wrap: wrap;
+    word-break: break-word;
+}
+
+.list__button {
+    background-color: #008800;
+    border: none;
+    width: 34px;
+    height: 34px;
+    margin: 0 12px;
+    color: #fff;
+}
+
+.list__button--remove {
+    background-color: #ff0000;
+}
