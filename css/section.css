@@ -27,6 +27,10 @@
     word-break: break-word;
 }
 
+.list__task--done {
+    text-decoration: line-through;
+}
+
 .list__button {
     background-color: #008800;
     border: none;
