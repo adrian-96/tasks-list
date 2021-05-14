@@ -40,6 +40,22 @@
     color: #fff;
 }
 
+.list__button:hover {
+    background-color: hsl(120, 100%, 31%);
+}
+
+.list__button:active {
+    background-color: hsl(120, 100%, 34%);
+}
+
 .list__button--remove {
     background-color: #ff0000;
+}
+
+.list__button--remove:hover {
+    background-color: hsl(0, 100%, 55%);
+}
+
+.list__button--remove:active {
+    background-color: hsl(0, 100%, 58%);
 }
