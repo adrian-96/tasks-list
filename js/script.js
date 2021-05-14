@@ -11,6 +11,11 @@
         render();
     };
 
+    const resetNewTask = (newTask) => {
+        newTask.value = "";
+        newTask.focus();
+    };
+
     const removeTask = (taskIndex) => {
         tasks.splice(taskIndex, 1);
         render();
@@ -45,7 +50,7 @@
     const render = () => {
         htmlString = ``;
 
-        for (task of tasks) {
+        for (const task of tasks) {
             htmlString += `
             <li class="list__item">
                 <button class="list__button js-doneTaskButton">${task.done ? "&#x2714;" : ""}</button>
@@ -64,13 +69,15 @@
     const onFormSubmit = (event) => {
         event.preventDefault();
 
-        const newTaskContent = document.querySelector(".js-newTask").value.trim();
+        const newTask = document.querySelector(".js-newTask")
+        const newTaskContent = newTask.value.trim();
 
         if (newTaskContent === "") {
             return;
         };
 
         addNewTask(newTaskContent);
+        resetNewTask(newTask);
     };
 
     const init = () => {
@@ -82,9 +89,6 @@
 
     };
 
-
-
-
-
+    
     init();
 };
