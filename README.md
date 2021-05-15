@@ -2,7 +2,7 @@
 
 ## Demo
 
-[Demo](https://adrian-96.github.io/tasks-list/)
+[Tasks list](https://adrian-96.github.io/tasks-list/)
 
 ## Description
 
