@@ -73,6 +73,7 @@
         const newTaskContent = newTask.value.trim();
 
         if (newTaskContent === "") {
+            resetNewTask(newTask);
             return;
         };
 
