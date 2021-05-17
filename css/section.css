@@ -7,6 +7,7 @@
     margin: 0;
     padding: 20px;
     border-bottom: 1px solid #eee;
+    font-size: 20px;
 }
 
 .list {
@@ -15,16 +16,16 @@
 }
 
 .list__item {
-    padding: 11px 0;
+    padding: 10px 0;
     border-bottom: 1px solid #eee;
     display: flex;
     align-items: center;
 }
 
 .list__task {
-    flex-basis: 100%;
     flex-wrap: wrap;
     word-break: break-word;
+    flex-grow: 1;
 }
 
 .list__task--done {
@@ -38,6 +39,7 @@
     height: 34px;
     margin: 0 12px;
     color: #fff;
+    flex-shrink: 0;
 }
 
 .list__button:hover {
