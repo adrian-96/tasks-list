@@ -3,11 +3,42 @@
     margin: 8px 0;
 }
 
+.section__container {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    border-bottom: 1px solid #eee;
+    padding: 20px;
+    grid-gap: 20px;
+}
+
+@media (max-width: 767px) {
+    .section__container {
+        grid-template-columns: auto;
+    }
+}
+
 .section__header {
     margin: 0;
     padding: 20px;
-    border-bottom: 1px solid #eee;
     font-size: 20px;
+}
+
+.section__header--special {
+    padding: 0;
+}
+
+.section__button {
+    border: none;
+    background-color: #ffffff00;
+    color: teal;
+}
+
+.section__button:hover {
+    color: hsl(180, 100%, 30%);
+}
+
+.section__button:active {
+    color: hsl(180, 100%, 35%);
 }
 
 .list {
