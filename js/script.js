@@ -1,12 +1,11 @@
 {
-    const tasks = [];
+    let tasks = [];
 
     const addNewTask = (newTaskContent) => {
-        tasks.push(
-            {
-                content: newTaskContent,
-            }
-        );
+        tasks = [
+            ...tasks,
+            { content: newTaskContent },
+        ];
 
         render();
     };
@@ -90,6 +89,6 @@
 
     };
 
-    
+
     init();
 };
