@@ -4,7 +4,7 @@
     const addNewTask = (newTaskContent) => {
         tasks = [
             ...tasks,
-            { content: newTaskContent },
+            { content: newTaskContent, done: false },
         ];
 
         render();
@@ -32,12 +32,22 @@
         render();
     };
 
+    const assignAllTaskDone = () => {
+        tasks = tasks.map(tasks => ({
+            ...tasks,
+            done: true,
+        }));
+        render();
+    };
+
     const bindEvents = () => {
         const removeTaskButtons = document.querySelectorAll(".js-removeTaskButton");
 
         removeTaskButtons.forEach((removeTaskButton, buttonIndex) => {
             removeTaskButton.addEventListener("click", () => {
                 removeTask(buttonIndex);
+
+                render();
             });
         });
 
@@ -50,6 +60,13 @@
 
                 render();
             });
+        });
+
+        const doneTaskAllButton = document.querySelector(".js-doneTaskAllButton");
+
+        doneTaskAllButton.addEventListener("click", () => {
+            assignAllTaskDone();
+            render();
         });
     };
 
