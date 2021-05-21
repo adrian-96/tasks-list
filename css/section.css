@@ -1,20 +1,12 @@
 .section {
     background-color: #fff;
-    margin: 8px 0;
+    margin: 10px 0;
 }
 
 .section__container {
     display: grid;
-    grid-template-columns: 1fr auto auto;
+    grid-template-columns: 1fr auto;
     border-bottom: 1px solid #eee;
-    padding: 20px;
-    grid-gap: 20px;
-}
-
-@media (max-width: 767px) {
-    .section__container {
-        grid-template-columns: auto;
-    }
 }
 
 .section__header {
@@ -27,6 +19,25 @@
     padding: 0;
 }
 
+.section__buttons {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 20px;
+}
+
+@media (max-width: 767px) {
+    .section__container {
+        grid-template-columns: auto;
+    }
+    
+    .section__buttons {
+        grid-template-columns: 1fr;
+        padding-top: 5px;
+    }
+}
+
+
 .section__button {
     border: none;
     background-color: #ffffff00;
@@ -34,11 +45,11 @@
 }
 
 .section__button:hover {
-    color: hsl(180, 100%, 30%);
+    color: hsl(180, 100%, 35%);
 }
 
 .section__button:active {
-    color: hsl(180, 100%, 35%);
+    color: hsl(180, 100%, 40%);
 }
 
 .list {
@@ -86,9 +97,9 @@
 }
 
 .list__button--remove:hover {
-    background-color: hsl(0, 100%, 55%);
+    background-color: hsl(0, 100%, 59%);
 }
 
 .list__button--remove:active {
-    background-color: hsl(0, 100%, 58%);
+    background-color: hsl(0, 100%, 64%);
 }
