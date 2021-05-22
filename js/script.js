@@ -94,7 +94,14 @@
     };
 
     const renderButtons = () => {
-        
+        htmlString = ``;
+
+        htmlString += `
+            <button class="section__button js-hideDoneTasksButton">Ukryj ukończone</button>
+            <button class="section__button js-doneAllTasksButton">Ukończ wszystkie</button>
+        `;
+
+        document.querySelector(".js-buttons").innerHTML = htmlString;
     };
 
     const render = () => {
