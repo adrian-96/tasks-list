@@ -97,7 +97,7 @@
         htmlString = ``;
 
         htmlString += `
-            <button class="section__button js-hideDoneTasksButton">Ukryj ukończone</button>
+            <button class="section__button js-hideDoneTasksButton">${hideDoneTasks ? "Pokaż ukończone" : "Ukryj ukończone"}</button>
             <button class="section__button js-doneAllTasksButton">Ukończ wszystkie</button>
         `;
 
