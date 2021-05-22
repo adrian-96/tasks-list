@@ -64,16 +64,19 @@
         });
 
         const doneAllTasksButton = document.querySelector(".js-doneAllTasksButton");
-
-        doneAllTasksButton.addEventListener("click", () => {
-            assignAllTaskDone();
-        });
-
         const hideDoneTasksButton = document.querySelector(".js-hideDoneTasksButton");
-        hideDoneTasksButton.addEventListener("click", () => {
-            toggleHideDoneTasks();
-            render();
-        });
+
+        if (doneAllTasksButton, hideDoneTasksButton) {
+
+            doneAllTasksButton.addEventListener("click", () => {
+                assignAllTaskDone();
+            });
+
+            hideDoneTasksButton.addEventListener("click", () => {
+                toggleHideDoneTasks();
+                render();
+            });
+        };
     };
 
 
@@ -94,13 +97,17 @@
     };
 
     const renderButtons = () => {
-        htmlString = ``;
+        if (tasks.length > 0) {
+            htmlString = ``;
 
-        htmlString += `
+            htmlString += `
             <button class="section__button js-hideDoneTasksButton">${hideDoneTasks ? "Pokaż ukończone" : "Ukryj ukończone"}</button>
             <button class="section__button js-doneAllTasksButton">Ukończ wszystkie</button>
         `;
 
+        } else {
+            htmlString = ``;
+        };
         document.querySelector(".js-buttons").innerHTML = htmlString;
     };
 
