@@ -1,5 +1,6 @@
 {
     let tasks = [];
+    let hideDoneTasks = false;
 
     const addNewTask = (newTaskContent) => {
         tasks = [
@@ -40,14 +41,17 @@
         render();
     };
 
+    const toggleHideDoneTasks = () => {
+        hideDoneTasks = !hideDoneTasks;
+        render();
+    };
+
     const bindEvents = () => {
         const removeTaskButtons = document.querySelectorAll(".js-removeTaskButton");
 
         removeTaskButtons.forEach((removeTaskButton, buttonIndex) => {
             removeTaskButton.addEventListener("click", () => {
                 removeTask(buttonIndex);
-
-                render();
             });
         });
 
@@ -55,27 +59,30 @@
 
         doneTaskButtons.forEach((doneTaskButton, buttonIndex) => {
             doneTaskButton.addEventListener("click", () => {
-
                 toggleTaskDone(buttonIndex);
-
-                render();
             });
         });
 
-        const doneTaskAllButton = document.querySelector(".js-doneTaskAllButton");
+        const doneAllTasksButton = document.querySelector(".js-doneAllTasksButton");
 
-        doneTaskAllButton.addEventListener("click", () => {
+        doneAllTasksButton.addEventListener("click", () => {
             assignAllTaskDone();
+        });
+
+        const hideDoneTasksButton = document.querySelector(".js-hideDoneTasksButton");
+        hideDoneTasksButton.addEventListener("click", () => {
+            toggleHideDoneTasks();
             render();
         });
     };
 
-    const render = () => {
+
+    const renderTasks = () => {
         htmlString = ``;
 
         for (const task of tasks) {
             htmlString += `
-            <li class="list__item">
+            <li class="list__item js-listItem ${task.done && hideDoneTasks ? "list__item--hidden" : ""}">
                 <button class="list__button js-doneTaskButton">${task.done ? "&#x2714;" : ""}</button>
                 <span class="list__task${task.done ? " list__task--done" : ""}">${task.content}</span>
                 <button class="list__button list__button--remove js-removeTaskButton">&#128465;</button>
@@ -84,6 +91,15 @@
         };
 
         document.querySelector(".js-tasks").innerHTML = htmlString;
+    };
+
+    const renderButtons = () => {
+        
+    };
+
+    const render = () => {
+        renderTasks();
+        renderButtons();
 
         bindEvents();
     };
