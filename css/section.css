@@ -42,6 +42,7 @@
     border: none;
     background-color: #ffffff00;
     color: teal;
+    transition: 0.4s;
 }
 
 .section__button:hover {

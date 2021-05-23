@@ -17,15 +17,16 @@
 }
 
 .form__addTaskButton {
-    
     padding: 10px;
     background-color: teal;
     color: #fff;
     border: none;
+    transition: 0.4s;
 }
 
 .form__addTaskButton:hover {
     background-color: hsl(180, 100%, 30%);
+    transform: scale(1.1);
 }
 
 .form__addTaskButton:active {

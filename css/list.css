@@ -28,6 +28,7 @@
     margin: 0 12px;
     color: #fff;
     flex-shrink: 0;
+    transition: 0.4s;
 }
 
 .list__button:hover {
