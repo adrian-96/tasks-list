@@ -33,7 +33,7 @@
         render();
     };
 
-    const assignAllTaskDone = () => {
+    const selectAllTaskDone = () => {
         tasks = tasks.map(tasks => ({
             ...tasks,
             done: true,
@@ -69,7 +69,7 @@
         if (doneAllTasksButton, hideDoneTasksButton) {
 
             doneAllTasksButton.addEventListener("click", () => {
-                assignAllTaskDone();
+                selectAllTaskDone();
             });
 
             hideDoneTasksButton.addEventListener("click", () => {
