@@ -74,11 +74,9 @@
 
             hideDoneTasksButton.addEventListener("click", () => {
                 toggleHideDoneTasks();
-                render();
             });
         };
     };
-
 
     const renderTasks = () => {
         htmlString = ``;
@@ -102,7 +100,7 @@
 
             htmlString += `
             <button class="section__button js-hideDoneTasksButton">${hideDoneTasks ? "Pokaż ukończone" : "Ukryj ukończone"}</button>
-            <button class="section__button js-doneAllTasksButton">Ukończ wszystkie</button>
+            <button class="section__button js-doneAllTasksButton" ${tasks.every((task => task.done)) ? "disabled" : ""}>Ukończ wszystkie</button>
         `;
 
         } else {
@@ -117,7 +115,6 @@
 
         bindEvents();
     };
-
 
     const onFormSubmit = (event) => {
         event.preventDefault();
@@ -140,9 +137,7 @@
         const form = document.querySelector(".js-form");
 
         form.addEventListener("submit", onFormSubmit);
-
     };
-
 
     init();
 };
