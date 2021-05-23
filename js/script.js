@@ -7,7 +7,6 @@
             ...tasks,
             { content: newTaskContent, done: false },
         ];
-
         render();
     };
 
@@ -112,7 +111,6 @@
     const render = () => {
         renderTasks();
         renderButtons();
-
         bindEvents();
     };
 
