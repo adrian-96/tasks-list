@@ -83,9 +83,15 @@
         for (const task of tasks) {
             htmlString += `
             <li class="list__item js-listItem ${task.done && hideDoneTasks ? "list__item--hidden" : ""}">
-                <button class="list__button js-doneTaskButton">${task.done ? "&#x2714;" : ""}</button>
-                <span class="list__task${task.done ? " list__task--done" : ""}">${task.content}</span>
-                <button class="list__button list__button--remove js-removeTaskButton">&#128465;</button>
+                <button class="list__button js-doneTaskButton">
+                    ${task.done ? "&#x2714;" : ""}
+                </button>
+                <span class="list__task${task.done ? " list__task--done" : ""}">
+                    ${task.content}
+                </span>
+                <button class="list__button list__button--remove js-removeTaskButton">
+                    &#128465;
+                </button>
             </li>
             `;
         };
@@ -98,8 +104,12 @@
             htmlString = ``;
 
             htmlString += `
-            <button class="section__button js-hideDoneTasksButton">${hideDoneTasks ? "Pokaż ukończone" : "Ukryj ukończone"}</button>
-            <button class="section__button js-doneAllTasksButton" ${tasks.every((task => task.done)) ? "disabled" : ""}>Ukończ wszystkie</button>
+            <button class="section__button js-hideDoneTasksButton">
+                ${hideDoneTasks ? "Pokaż ukończone" : "Ukryj ukończone"}
+            </button>
+            <button class="section__button js-doneAllTasksButton"${tasks.every((task => task.done)) ? " disabled" : ""}>
+                Ukończ wszystkie
+            </button>
         `;
 
         } else {
