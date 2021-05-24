@@ -37,7 +37,6 @@
     }
 }
 
-
 .section__button {
     border: none;
     background-color: #ffffff00;
@@ -47,6 +46,7 @@
 
 .section__button:hover {
     color: hsl(180, 100%, 35%);
+    cursor: pointer;
 }
 
 .section__button:active {
