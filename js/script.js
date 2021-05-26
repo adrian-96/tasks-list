@@ -23,7 +23,7 @@
         render();
     };
 
-    const toggleTaskDone = (taskIndex) => {
+    const toggleDoneTask = (taskIndex) => {
         tasks = [
             ...tasks.slice(0, taskIndex),
             { ...tasks[taskIndex], done: !tasks[taskIndex].done },
@@ -32,7 +32,7 @@
         render();
     };
 
-    const selectAllTaskDone = () => {
+    const markAllTasksDone = () => {
         tasks = tasks.map(tasks => ({
             ...tasks,
             done: true,
@@ -44,9 +44,9 @@
         hideDoneTasks = !hideDoneTasks;
         render();
     };
-
+    
     const bindEvents = () => {
-        const removeTaskButtons = document.querySelectorAll(".js-removeTaskButton");
+        const removeTaskButtons = document.querySelectorAll(".js-removeTaskButtons");
 
         removeTaskButtons.forEach((removeTaskButton, buttonIndex) => {
             removeTaskButton.addEventListener("click", () => {
@@ -54,11 +54,11 @@
             });
         });
 
-        const doneTaskButtons = document.querySelectorAll(".js-doneTaskButton")
+        const doneTaskButtons = document.querySelectorAll(".js-doneTaskButtons")
 
         doneTaskButtons.forEach((doneTaskButton, buttonIndex) => {
             doneTaskButton.addEventListener("click", () => {
-                toggleTaskDone(buttonIndex);
+                toggleDoneTask(buttonIndex);
             });
         });
 
@@ -68,7 +68,7 @@
         if (doneAllTasksButton, hideDoneTasksButton) {
 
             doneAllTasksButton.addEventListener("click", () => {
-                selectAllTaskDone();
+                markAllTasksDone();
             });
 
             hideDoneTasksButton.addEventListener("click", () => {
@@ -83,13 +83,13 @@
         for (const task of tasks) {
             htmlString += `
             <li class="list__item js-listItem ${task.done && hideDoneTasks ? "list__item--hidden" : ""}">
-                <button class="list__button js-doneTaskButton">
+                <button class="list__button js-doneTaskButtons">
                     ${task.done ? "&#x2714;" : ""}
                 </button>
                 <span class="list__task${task.done ? " list__task--done" : ""}">
                     ${task.content}
                 </span>
-                <button class="list__button list__button--remove js-removeTaskButton">
+                <button class="list__button list__button--remove js-removeTaskButtons">
                     &#128465;
                 </button>
             </li>
