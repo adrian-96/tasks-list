@@ -86,7 +86,7 @@
     };
 
     const renderTasks = () => {
-        htmlString = ``;
+        let htmlString = ``;
 
         for (const task of tasks) {
             htmlString += `
@@ -103,14 +103,12 @@
             </li>
             `;
         };
-
         document.querySelector(".js-tasks").innerHTML = htmlString;
     };
 
     const renderButtons = () => {
+        let htmlString = ``;
         if (tasks.length > 0) {
-            htmlString = ``;
-
             htmlString += `
             <button class="section__button js-hideDoneTasksButton">
                 ${hideDoneTasks ? "Pokaż ukończone" : "Ukryj ukończone"}
